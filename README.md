@@ -23,7 +23,7 @@
 | Column                 | Type       | Options                        |
 | ---------------------- | ---------- | ------------------------------ |
 | name                   | string     | null: false                    |
-| price                  | int        | null: false                    |
+| price                  | integer    | null: false                    |
 | describe               | text       | null: false                    |
 | category_id            | integer    | null: false                    |
 | condition_id           | integer    | null: false                    |
