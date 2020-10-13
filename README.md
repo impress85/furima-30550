@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :order
+- has_many :orders
 
 
 ## items テーブル
@@ -28,7 +28,7 @@
 | category_id            | integer    | null: false                    |
 | condition_id           | integer    | null: false                    |
 | shipping_cost_payer_id | integer    | null: false                    |
-| shipment_source_id     | integer    | null: false                    |
+| prefectures_id         | integer    | null: false                    |
 | shipping_days_id       | integer    | null: false                    |
 | user                   | references | null: false, foreign_key: true |
 

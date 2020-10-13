@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-10-13T12:02:14.011Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.0 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="dh1-1wW8JQAMVUvhKa0V" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-10-13T12:27:36.541Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.0 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="ZvnZDgIByX_T2StNCJSW" version="13.6.5">
     <diagram id="mcvKh9-y6H_A8fSNe0MZ" name="ページ1">
         <mxGraphModel dx="1069" dy="635" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
@@ -148,7 +148,7 @@
                 <mxCell id="288" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="287" vertex="1">
                     <mxGeometry width="20" height="23" as="geometry"/>
                 </mxCell>
-                <mxCell id="289" value="price (int型, NOT NULL)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;sketch=0;opacity=50;" parent="287" vertex="1">
+                <mxCell id="289" value="price (integer型, NOT NULL)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;sketch=0;opacity=50;" parent="287" vertex="1">
                     <mxGeometry x="20" width="273.75" height="23" as="geometry"/>
                 </mxCell>
                 <mxCell id="290" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="183" vertex="1">
