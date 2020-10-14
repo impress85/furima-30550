@@ -14,5 +14,7 @@ class User < ApplicationRecord
   validates :family_name_katakana,
     format:{ with: /\A[ァ-ヶー－]+\z/ }, presence: true
   validates :birthday, presence: true
+  validates :password, length: { minimum: 6 },
+    format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
 
 end
