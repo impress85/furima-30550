@@ -117,6 +117,11 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Family name can't be blank")
       end
+      it "first_nameが全角でなければ登録できない" do
+        @user.family_name = "sato"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name is invalid")
+      end
       it "family_name_katakanaが空だと登録できない" do
         @user.family_name_katakana = nil
         @user.valid?
