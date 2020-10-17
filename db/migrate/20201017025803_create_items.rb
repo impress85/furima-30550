@@ -5,6 +5,11 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :price
       t.text    :describe
       t.references :user,  forign_key: true
+      t.integer :category_id
+      t.integer :condition_id
+      t.integer :shipping_cost_payer_id
+      t.integer :prefectures_id
+      t.integer :shipping_days_id
       t.timestamps
     end
   end
