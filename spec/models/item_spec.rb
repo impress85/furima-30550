@@ -10,18 +10,6 @@ describe Item do
       it "name,price,describe,user_id,category_id,condition_id,shipping_cost_payer_id,prefectures_id,shipping_day_id,imageが存在すること" do
         expect(@item).to be_valid
       end
-      it "priceが半角英数であること" do
-        @item.price = "1000"
-        expect(@item).to be_valid
-      end
-      it "priceが300以上であること" do
-        @item.price = "300"
-        expect(@item).to be_valid
-      end
-      it "priceが9,999,999以下であること" do
-        @item.price = "9999999"
-        expect(@item).to be_valid
-      end
     end
 
     context '商品出品がうまくいかないとき' do
