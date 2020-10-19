@@ -18,6 +18,12 @@ class ItemsController < ApplicationController
     end
   end 
 
+  def show
+    @item = Item.find(params[:id])
+    @item_prefectures_name = Prefecture.find(@item.prefectures_id).name
+    @item_shipping_days_name = ShippingDay.find(@item.shipping_days_id).name
+  end
+
 private
   def item_params
     params.require(:item).permit(
