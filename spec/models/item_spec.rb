@@ -7,7 +7,7 @@ describe Item do
 
   describe '商品出品機能' do
     context '商品出品がうまくいくとき' do
-      it "name,price,describe,user_id,category_id,condition_id,shipping_cost_payer_id,prefectures_id,shipping_day_id,imageが存在すること" do
+      it "name,price,describe,user_id,category_id,condition_id,shipping_cost_payer_id,prefecture_id,shipping_day_id,imageが存在すること" do
         expect(@item).to be_valid
       end
     end
@@ -78,23 +78,23 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping cost payer must be other than 1")
       end
-      it "prefectures_id が空だと登録できない" do
-        @item.prefectures_id = nil
+      it "prefecture_id が空だと登録できない" do
+        @item.prefecture_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
-      it "prefectures_id が 1 だと登録できない" do
-        @item.prefectures_id = "1"
+      it "prefecture_id が 1 だと登録できない" do
+        @item.prefecture_id = "1"
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures must be other than 1")
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
-      it "shipping_days_id が空だと登録できない" do
-        @item.shipping_days_id = nil
+      it "shipping_day_id が空だと登録できない" do
+        @item.shipping_day_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping days can't be blank")
       end
-      it "shipping_days_id が 1 だと登録できない" do
-        @item.shipping_days_id = "1"
+      it "shipping_day_id が 1 だと登録できない" do
+        @item.shipping_day_id = "1"
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping days must be other than 1")
       end
