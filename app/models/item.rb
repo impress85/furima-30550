@@ -18,8 +18,8 @@ class Item < ApplicationRecord
     validates :category_id, numericality: { other_than: 1 }
     validates :condition_id, numericality: { other_than: 1 }
     validates :shipping_cost_payer_id, numericality: { other_than: 1 }
-    validates :prefectures_id, numericality: { other_than: 1 }
-    validates :shipping_days_id, numericality: { other_than: 1 }
+    validates :prefecture_id, numericality: { other_than: 1 }
+    validates :shipping_day_id, numericality: { other_than: 1 }
   end
 
   validates_inclusion_of :price, in:300..9999999, message: "outside the limits(¥300~¥9,999,999)"
