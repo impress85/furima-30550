@@ -124,21 +124,21 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
-      <% unless @items.nil? %>
+      <% unless @items.empty? %>
         <% @items.each do |item| %>
           <li class='list'>
             <%= link_to "#" do %>
-            <div class='item-img-content'>
-              <%= image_tag item.image, class: "item-img" %>
+             <div class='item-img-content'>
+                <%= image_tag item.image, class: "item-img" %>
 
-              <%# 商品が売れていればsold outを表示しましょう %>
-              <div class='sold-out'>
-                <%# <% <span>Sold Out!!</span>  ←は実装まで一旦コメントアウトいたします。 %>
-              </div>
-              <%# //商品が売れていればsold outを表示しましょう %>
+                <%# 商品が売れていればsold outを表示しましょう %>
+                <div class='sold-out'>
+                  <%# <% <span>Sold Out!!</span>  ←は実装まで一旦コメントアウトいたします。 %>
+                </div>
+                <%# //商品が売れていればsold outを表示しましょう %>
 
-            </div>
-            <div class='item-info'>
+             </div>
+             <div class='item-info'>
               <h3 class='item-name'>
                 <%= item.name %>
               </h3>
@@ -149,13 +149,13 @@
                   <span class='star-count'>0</span>
                 </div>
               </div>
-            </div>
+             </div>
             <% end %>
-          <% end%>
-        </li>
-      <% if @items.nil? %>
-          <li class='list'>
-            <%= link_to '#' do %>
+          </li>
+        <% end%>
+      <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
             <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
             <div class='item-info'>
               <h3 class='item-name'>
@@ -164,14 +164,13 @@
               <div class='item-price'>
                 <span>99999999円<br>(税込み)</span>
                 <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
               </div>
             </div>
-            <% end %>
-          </li>
-        <% end %>
+          </div>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
