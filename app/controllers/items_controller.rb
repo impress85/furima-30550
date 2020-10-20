@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!  , except: [:index,:show]
+  before_action :authenticate_user!  , except: [:index,:show, :update]
+  before_action :set_item, only: [:edit, :show, :update]
+  before_action :move_to_index,  only:[:edit, :update]
 
   def index
     @items = Item.all.order("created_at ASC")
@@ -18,10 +20,12 @@ class ItemsController < ApplicationController
     end
   end 
 
-  def show
-    @item = Item.find(params[:id])
-    # @item_prefectures_name = Prefecture.find(@item.prefectures_id).name
-    # @item_shipping_days_name = ShippingDay.find(@item.shipping_days_id).name
+  def update
+    if @item.update(item_params)
+       redirect_to root_path
+    else
+       render :edit
+    end
   end
 
 private
@@ -31,5 +35,15 @@ private
       :prefecture_id,:shipping_cost_payer_id,:shipping_day_id
     ).merge(user_id: current_user.id)
   end 
+
+ def move_to_index
+    unless current_user.id == @item.user_id
+      redirect_to root_path
+    end
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
 end
