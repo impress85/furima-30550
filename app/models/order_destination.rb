@@ -7,15 +7,11 @@ class OrderDestination
                 :user_id, :item_id, :token
 
   with_options presence: true do
-    validates :postal_code
+    validates :postal_code, format:{with: /\A\d{3}[-]\d{4}\z/ }
+    validates :prefecture_id, numericality: { other_than: 1 }
     validates :municipality
     validates :address
-    validates :building_name
-    validates :phone_number
-    # validates :number
-    # validates :exp_month
-    # validates :exp_year
-    # validates :cvc
+    validates :phone_number , length: { in: 10..11 }
   end 
 
   def save

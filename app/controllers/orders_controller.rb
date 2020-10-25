@@ -6,8 +6,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # destination = Destination.new
-    # order = Order.new
     @order_destination = OrderDestination.new(order_destination_params)
 
     if @order_destination.valid?  
@@ -30,4 +28,3 @@ class OrdersController < ApplicationController
 
   
 end
-
