@@ -56,6 +56,11 @@ describe OrderDestination do
         @order_destination.valid?
         expect(@order_destination.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
       end
+      it 'phone_numberが11桁以上だと保存できないこと' do
+        @order_destination.phone_number = 1234567890123
+        @order_destination.valid?
+        expect(@order_destination.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
       it 'tokenが空だと保存できないこと' do
         @order_destination.token = nil
         @order_destination.valid?

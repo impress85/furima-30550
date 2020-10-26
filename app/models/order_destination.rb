@@ -3,7 +3,6 @@ class OrderDestination
   include ActiveModel::Model
 
   attr_accessor :postal_code, :municipality, :prefecture_id, :address, :building_name, :phone_number,
-                :number,:exp_month,:exp_year,:cvc,
                 :user_id, :item_id, :token
 
   with_options presence: true do
