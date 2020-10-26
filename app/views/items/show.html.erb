@@ -8,11 +8,11 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag @item.image ,class:"item-box-img" %>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
+      <% unless @item.order.nil? %>
       <div class='sold-out'>
-        <%# <span>Sold Out!!</span>   ←　機能実装後コメントアウトを外します。%> 
+         <span>Sold Out!!</span> 
       </div>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      <% end %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -22,17 +22,16 @@
         (税込) 送料込み
       </span>
     </div>
-    <% if user_signed_in? %>
+    
+    <% if @item.order.nil? && user_signed_in?  %>
       <% if current_user.id == @item.user_id %>
         <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
       <% else %>
-      <%# 商品が売れていない場合はこちらを表示しましょう %>
-      <%= link_to '購入画面に進む', item_orders_path(@item.id) ,class:"item-red-btn" %>
-      <%# //商品が売れていない場合はこちらを表示しましょう %>
-      <%end%>
-    <% end %>
+        <%= link_to '購入画面に進む', item_orders_path(@item.id) ,class:"item-red-btn" %>
+      <% end %>
+    <%end%>
 
     <div class="item-explain-box">
       <span><%= @item.describe %></span>
@@ -92,6 +91,7 @@
       </button>
     </form>
   </div>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品

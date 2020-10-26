@@ -12,6 +12,7 @@ class OrderDestination
     validates :municipality
     validates :address
     validates :phone_number , length: { in: 10..11 }
+    validates :token
   end 
 
   def save
