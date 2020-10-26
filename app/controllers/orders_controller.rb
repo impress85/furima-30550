@@ -29,7 +29,11 @@ class OrdersController < ApplicationController
 
     def set_item
       @item = Item.find(params[:item_id])
+      if  @item.order !=nil
+        redirect_to root_path
+      end
     end
+
 
     def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
